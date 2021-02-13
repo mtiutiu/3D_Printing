@@ -1,0 +1,30 @@
+
+####### HOTEND #####################
+# Steps:
+#   1. Get the current PID settings using the M503 command. Your printer will return the current PID settings.
+#   2. Run the M106 S255 command in order to set your cooling fan to 100%
+#   3. Run the M303 E0 S215 C8 command and wait for the process to finish (sets extruder to 215 Celsius and run 8 cycles).
+
+#define DEFAULT_Kp 27.73
+#define DEFAULT_Ki 2.66
+#define DEFAULT_Kd 72.24
+
+M301 P27.73 I2.66 D72.24 # set the new values
+M500                     # save new values to EEPROM
+####################################
+
+
+
+######### BED ######################
+# Steps:
+#   1. Get the current PID settings using the M503 command. Your printer will return the current PID settings.
+#   2. Run the M106 S255 command in order to set your cooling fan to 100%
+#   3. Run the M303 E-1 S60 C8 command and wait for the process to finish (sets bed to 60 Celsius and run 8 cycles).
+
+#define DEFAULT_bedKp 88.95
+#define DEFAULT_bedKi 17.07
+#define DEFAULT_bedKd 309.00
+
+M304 P88.95 I17.07 D309.00 # set the new values
+M500                       # save new values to EEPROM
+####################################
